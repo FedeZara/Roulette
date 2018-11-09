@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simulatore Roulette | Gioca</title>
+    <script src="./scripts/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  </head>
+  <body onresize="resize()" onmousemove="cursor()" onscroll="fixJetonsPositions()">
+    <header>
+      <div class="container">
+        <h1> <span id="title">Roulette </span>Simulator </h1>
+      </div>
+    </header>
+    <section id="statistics">
+      <div class = "container">
+        <div id = "lastScore">
+          <table>
+            <caption>Round precedente</caption>
+            <thead>
+              <tr>
+                <th class="red">Soldi puntati</th>
+                <th class="black">Soldi persi</th>
+                <th class="red">Soldi vinti</th>
+                <th class="black">Bilancio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id = "round">
+          <p> ROUND </p>
+          <h2> 1 </h2>
+        </div>
+        <div id="totalScore">
+          <table>
+            <caption>Totale</caption>
+            <thead>
+              <tr>
+                <th class="black">Soldi puntati</th>
+                <th class="red">Soldi persi</th>
+                <th class="black">Soldi vinti</th>
+                <th class="red">Soldi rimasti</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>1000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="play">
+      <div class="container2">
+        <div id="roulette">
+          <div id="pointer">
+            <img src="./images/pointer.png"></img>
+          </div>
+          <div id="wheel">
+            <img src="./images/wheel.png"></img>
+          </div>
+        </div>
+        <div id="table">
+          <div id="jetons">
+            <div class="container1">
+              <div class="jeton" id = "j5" onclick="highlightJeton(0)"> <p> 5 </p> </div>
+              <div class="jeton" id = "j10" onclick="highlightJeton(1)"> <p> 10 </p> </div>
+              <div class="jeton" id = "j20" onclick="highlightJeton(2)"> <p> 20 </p> </div>
+              <div class="jeton" id = "j50" onclick="highlightJeton(3)"> <p> 50 </p> </div>
+              <div class="jeton" id = "j100" onclick="highlightJeton(4)"> <p> 100 </p> </div>
+              <div class="jeton" id = "j200" onclick="highlightJeton(5)"> <p> 200 </p> </div>
+              <div class="jeton" id = "j500" onclick="highlightJeton(6)"> <p> 500 </p> </div>
+            </div>
+          </div>
+          <div id="buttons">
+            <div class="container1">
+              <button onclick="spin()">Gira</button>
+              <button onclick="deleteJ()">Elimina</button>
+              <button onclick="reset()">Resetta</button>
+            </div>
+          </div>
+          <div id="numbers">
+            <table>
+              <tr>
+                <td rowspan="3"><div class="green" id="n0">0</div></td>
+                <td><div class="red" id="n3">3</div></td>
+                <td><div class="black" id="n6">6</td>
+                <td><div class="red" id="n9">9</div></td>
+                <td><div class="red" id="n12">12</td>
+                <td><div class="black" id="n15">15</div></td>
+                <td><div class="red" id="n18">18</td>
+                <td><div class="red" id="n21">21</div></td>
+                <td><div class="black" id="n24">24</td>
+                <td><div class="red" id="n27">27</div></td>
+                <td><div class="red" id="n30">30</td>
+                <td><div class="black" id="n33">33</div></td>
+                <td><div class="red" id="n36">36</td>
+                <td><div class="green" id="row3">2/1</div></td>
+              </tr>
+              <tr>
+                <td><div class="black" id="n2">2</div></td>
+                <td><div class="red" id="n5">5</td>
+                <td><div class="black" id="n8">8</div></td>
+                <td><div class="black" id="n11">11</td>
+                <td><div class="red" id="n14">14</div></td>
+                <td><div class="black" id="n17">17</td>
+                <td><div class="black" id="n20">20</div></td>
+                <td><div class="red" id="n23">23</td>
+                <td><div class="black" id="n26">26</div></td>
+                <td><div class="black" id="n29">29</td>
+                <td><div class="red" id="n32">32</div></td>
+                <td><div class="black" id="n35">35</td>
+                <td><div class="green" id="row2">2/1</div></td>
+              </tr>
+              <tr>
+                <td><div class="red" id="n1">1</div></td>
+                <td><div class="black" id="n4">4</td>
+                <td><div class="red" id="n7">7</div></td>
+                <td><div class="black" id="n10">10</td>
+                <td><div class="black" id="n13">13</div></td>
+                <td><div class="red" id="n16">16</td>
+                <td><div class="red" id="n19">19</div></td>
+                <td><div class="black" id="n22">22</td>
+                <td><div class="red" id="n25">25</div></td>
+                <td><div class="black" id="n28">28</td>
+                <td><div class="black" id="n31">31</div></td>
+                <td><div class="red" id="n34">34</td>
+                <td><div class="green" id="row1">2/1</div></td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td colspan="4"><div class="green" id="s1-12">1-12</div></td>
+                <td colspan="4"><div class="green" id="s13-24">13-24</div></td>
+                <td colspan="4"><div class="green" id="s25-36">25-36</div></td>
+              </tr>
+              <tr>
+                <td class="empty"></td>
+                <td colspan="2"><div class="green" id="odd">Dispari</div></td>
+                <td colspan="2"><div class="green" id="s1-18">1-18</div></td>
+                <td colspan="2"><div class="red" id="red">Rossi</td>
+                <td colspan="2"><div class="black" id="black">Neri</td></td>
+                <td colspan="2"><div class="green" id="s19-36">19-36</td></td>
+                <td colspan="2"><div class="green" id="even">Pari</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p> Simulatore realizzato da Federico Zarantonello </p>
+      </div>
+    </footer>
+
+    <script>
+      resize();
+    </script>
+
+  </body>
+</html>

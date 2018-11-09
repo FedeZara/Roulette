@@ -1,0 +1,278 @@
+body{
+  font: 15px/1.5 Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #3D7D0F;
+  position: relative;
+}
+
+.container{
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.container2{
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.red{
+  background-color: #D83034;
+}
+
+.black{
+  background-color: #000000;
+}
+
+.green{
+  background-color: #3D7D0F;
+}
+
+header {
+  background-color: black;
+  color: white;
+  border-bottom: #D83034 3px solid;
+}
+
+header h1{
+    font-size: 24px;
+}
+
+header h1 #title{
+  color: #D83034;
+}
+
+#statistics{
+  background-color: white;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#statistics table{
+  margin:auto;
+  border-collapse: collapse;
+}
+
+#statistics th, #statistics td{
+  border: 1px solid white;
+  padding: 4px 8px 4px 8px;
+}
+
+#statistics th{
+  color: white;
+}
+
+#statistics td{
+  color: black;
+}
+
+#statistics table caption, #statistics #round p{
+  font-size: 18px;
+  font-weight: 900;
+  color: #D83034;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+#statistics #lastScore{
+  float: left;
+  display: inline;
+  width:40%;
+}
+
+#statistics #round{
+  float: left;
+  display: inline;
+  width:20%;
+}
+
+#statistics #round h2{
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+#statistics #totalScore{
+  float: right;
+  display: inline;
+  width:40%;
+}
+
+#play{
+  height: auto;
+}
+
+#play #roulette{
+  float: left;
+  display: inline;
+  width: 30%;
+  margin-top: 10px;
+  position: relative;
+}
+
+
+#play #roulette #pointer img{
+  width: 20%;
+  position: absolute;
+  margin-left: 40%;
+  z-index: 2;
+}
+
+#play #roulette #wheel img{
+  width: 100%;
+  z-index: 1;
+}
+
+#play #table{
+  display: inline;
+  float: right;
+  width: 70%;
+  margin-top: 10px;
+}
+
+#play #table #jetons {
+  width:50%;
+  margin-bottom: 10px;
+  float:left;
+  display:inline;
+}
+
+#play #table #buttons {
+  width:50%;
+  margin-bottom: 10px;
+  float:right;
+  display:inline;
+  margin-top: 10px;
+}
+
+button {
+  width: 25%;
+  margin:auto;
+	box-shadow:inset 0px 1px 3px 0px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:5px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #283966;
+}
+
+
+button.selectedBtn,
+button:hover{
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+#play #table #jetons .jeton,
+#play #table #numbers .jetonPlaced,
+#play #table #numbers .jetonCursor{
+  background-image: url("../images/jeton.PNG");
+  background-repeat: no-repeat;
+  float: left;
+  display: inline;
+  margin: 2px 2px 2px 2px;
+  opacity: 0.5;
+}
+
+#play #table #jetons #j20 {
+  opacity: 1;
+}
+
+#play #table #jetons .jeton:hover{
+  cursor: pointer;
+}
+
+#play #table #jetons .jeton p,
+#play #table #numbers .jetonPlaced p,
+#play #table #numbers .jetonCursor p{
+  text-align: center;
+  font-weight: 1000;
+  padding: 0;
+}
+
+#play #table #numbers{
+  float:left;
+  display: block;
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
+
+#play #table #numbers .jetonPlaced,
+#play #table #numbers .jetonCursor{
+  position: fixed;
+  display: block;
+  opacity: 1;
+}
+
+#play #table #numbers .jetonCursor{
+  z-index: 1;
+}
+
+#play #table #numbers .jetonPlaced:hover{
+  cursor: pointer;
+}
+
+#play #table #numbers table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#play #table #numbers:hover{
+  cursor: none;
+}
+
+
+#play #table #numbers td {
+  border: 3px solid white;
+  width: 7%;
+  padding: 0;
+}
+
+#play #table #numbers td.empty {
+  border: 0px;
+  width: 7%;
+  padding: 0;
+}
+
+#play #table #numbers td div{
+  width: 100%;
+  text-align: center;
+  color:white;
+  font-weight: 700;
+  height: 100%;
+}
+
+footer {
+  text-align: center;
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+#outPopUp {
+  position: absolute;
+  width: 300px;
+  height: 100px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -150px;
+  background: white;
+  color: black;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
